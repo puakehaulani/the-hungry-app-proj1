@@ -5,3 +5,9 @@
 .navbar-item{
     color: white;
 }
+
+.background-image-mine{
+    background-image: url(images/redfood.jpg);
+    background-size: cover;
+    height: 999px;
+}
