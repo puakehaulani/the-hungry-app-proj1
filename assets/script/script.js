@@ -7,25 +7,29 @@ document.getElementById("ingredientsTable").addEventListener("click", function(e
     console.log(event.target)
     if(event.target.matches("a")){
         console.log("in here");
-        
         event.target.parentElement.parentElement.remove();
     }
 });
 
 // this adds ingredients to the table
 $("#ingredientSearch").on("click", function(){
-    // pushes ingredient into the array of ingredients
-    ingredientsArr.push($("#ingredientInput").val());
-    // creates and appends several elements to make the ingredients list elements
-    $("#ingredientsTable").append(
-        $("<tr>").append(
-            $("<td>").text($("#ingredientInput").val())
-        ).append(
-            $("<td>").append(
-                $("<a>").addClass("delete")
+    let ingredient = $("#ingredientInput").val();
+    // checks if the input is not empty
+    if(ingredient != ""){
+        // pushes ingredient into the array of ingredients
+        ingredientsArr.push(ingredient);
+        // creates and appends several elements to make the ingredients list elements
+        $("#ingredientsTable").append(
+            $("<tr>").append(
+                $("<td>").text(ingredient)
+            ).append(
+                $("<td>").append(
+                    $("<a>").addClass("delete")
+                )
             )
-        )
-    );
-    // clears the ingredients search bar
-    $("#ingredientInput").val('');
+        );
+        // clears the ingredients search bar
+        $("#ingredientInput").val('');
+
+    }
 });
