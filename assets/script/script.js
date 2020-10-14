@@ -12,7 +12,7 @@ document.getElementById("ingredientsTable").addEventListener("click", function(e
 });
 
 // this adds ingredients to the table
-$("#ingredientSearch").on("click", function(){
+$("#ingredientAdd").on("click", function(){
     let ingredient = $("#ingredientInput").val();
     // checks if the input is not empty
     if(ingredient != ""){
@@ -32,4 +32,10 @@ $("#ingredientSearch").on("click", function(){
         $("#ingredientInput").val('');
 
     }
+});
+
+$("#ingredientSearch").on("click", function(){
+    console.log("pressed search")
+    localStorage.setItem("ingredients", ingredientsArr);
+    location.href = "results.html";
 });
