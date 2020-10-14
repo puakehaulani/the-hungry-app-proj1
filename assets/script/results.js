@@ -19,12 +19,6 @@ function buildIngredientsURL() {
     console.log(ingredientsAPIURL + $.param(ingredientsParams));
     return ingredientsAPIURL + $.param(ingredientsParams);
 }
-// ---build recipe endpoint function---
-function buildRecipeURL(recipeId) {
-    let recipeAPIURL = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=eb7473b82620444ab521e6fa290c08a3&includeNutrition=false"
-    console.log(recipeId + " gets URL " + recipeAPIURL);
-}
-
 
 
 // show results function
@@ -34,36 +28,33 @@ function showResults(responseli) {
     $display.empty();
     for (i = 0; i < 10; i++) {
         let li = $("<li>");
-        let a = $("<a>");
-        let bk = $("<br>")
-
         li.text(responseli[i].title);
         $display.append(li);
 
-        let recipeID = responseli[i].id;
-        console.log(recipeID);
-        buildRecipeURL(recipeID);
-        //ajax call to get url for recipe, issue on testing so commented out
+        let recipeId = responseli[i].id;
+        console.log(recipeId);
+        let recipeAPI = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=eb7473b82620444ab521e6fa290c08a3&includeNutrition=false";
+        // ajax call to get url for recipe, commented out to preserve quota
         // $.ajax({
-        //     url: recipeAPI,
-        //     method: "GET",
-        // }).then(function (response) {
-        //     console.log(response);
-        //     let responseLink = response.spoonacularSourceUrl;
-        //     a.attr("src", responseLink);
-        //     li.append(a);
-        //     li.append(bk);
-        // })
-    }
+        url: recipeAPI,
+            method: "GET",
+        }).then(function (response) {
+                console.log(response);
+                let responseLink = response.sourceUrl;
+                console.log(responseLink);
+                li.attr("data-link", responseLink);
+            })
+}
 }
 
 // -----CALLS-----
 let ingredientAPI = buildIngredientsURL();
-$.ajax({
-    url: ingredientAPI,
+//ajax call working, commented out to preserve quota
+// $.ajax({
+url: ingredientAPI,
     method: "GET",
 }).then(function (response) {
-    console.log(response);
-    showResults(response);
-})
+        console.log(response);
+        showResults(response);
+    })
 
