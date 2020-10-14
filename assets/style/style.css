@@ -1,3 +1,10 @@
+
+html{
+    background-image: url(images/redfood.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .navbar{
     background-color: #F78800;
 }
@@ -6,8 +13,13 @@
     color: white;
 }
 
-.background-image-mine{
-    background-image: url(images/redfood.jpg);
-    background-size: cover;
-    height: 999px;
+.button{
+    background-color: #f78800;
+    color: white;
 }
+
+th{
+    background-color: #f78800;
+    color: white !important;
+}
+
