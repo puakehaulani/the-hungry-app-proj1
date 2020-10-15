@@ -22,6 +22,10 @@ html{
     color: white;
 }
 
+#ingredientSearch{
+    display: inline-block;
+}
+
 th{
     background-color: #f78800;
     color: white !important;
