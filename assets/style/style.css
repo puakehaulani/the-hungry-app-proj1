@@ -13,6 +13,10 @@ html{
     color: white;
 }
 
+.navbar-item a{
+    color: white;
+}
+
 .button{
     background-color: #f78800;
     color: white;

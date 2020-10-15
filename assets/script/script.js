@@ -1,7 +1,3 @@
-let ingredientsArr = [];
-// This is what lexi needs (a string of ingredients seperated by commas)
-let ingredientArrSpliced = ingredientsArr.splice;
-
 // will delete items from the user made ingredient list
 document.getElementById("ingredientsTable").addEventListener("click", function(event){
     console.log(event.target)
@@ -35,7 +31,6 @@ $("#ingredientAdd").on("click", function(){
 });
 
 $("#ingredientSearch").on("click", function(){
-    console.log("pressed search")
     localStorage.setItem("ingredients", ingredientsArr);
     location.href = "results.html";
 });
