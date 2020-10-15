@@ -1,6 +1,6 @@
 
 html{
-    background-image: url(images/redfood.jpg);
+    background-image: url(images/foodOnSIde.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -22,4 +22,3 @@ th{
     background-color: #f78800;
     color: white !important;
 }
-
