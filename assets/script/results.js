@@ -28,33 +28,45 @@ function showResults(responseli) {
     $display.empty();
     for (i = 0; i < 10; i++) {
         let li = $("<li>");
+        let viewBtn = $("<a>");
+        let saveBtn = $("<button>");
         li.text(responseli[i].title);
+        viewBtn.text("View Recipe");
+        viewBtn.attr("class", "button is-inverted is-outlined");
+        viewBtn.attr("target", "_blank")
+        saveBtn.text("Save to Favorites");
+        saveBtn.attr("id", "saveBtn");
+        saveBtn.attr("class", "is-inverted is-outlined");
+
+        li.append(viewBtn);
+        li.append(saveBtn);
         $display.append(li);
 
         let recipeId = responseli[i].id;
         console.log(recipeId);
         let recipeAPI = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=eb7473b82620444ab521e6fa290c08a3&includeNutrition=false";
         // ajax call to get url for recipe, commented out to preserve quota
-        // $.ajax({
-        url: recipeAPI,
+        $.ajax({
+            url: recipeAPI,
             method: "GET",
         }).then(function (response) {
-                console.log(response);
-                let responseLink = response.sourceUrl;
-                console.log(responseLink);
-                li.attr("data-link", responseLink);
-            })
-}
+            console.log(response);
+            let responseLink = response.sourceUrl;
+            console.log(responseLink);
+            li.attr("data-link", responseLink);
+            viewBtn.attr("href", responseLink);
+        })
+    }
 }
 
 // -----CALLS-----
 let ingredientAPI = buildIngredientsURL();
 //ajax call working, commented out to preserve quota
-// $.ajax({
-url: ingredientAPI,
+$.ajax({
+    url: ingredientAPI,
     method: "GET",
 }).then(function (response) {
-        console.log(response);
-        showResults(response);
-    })
+    console.log(response);
+    showResults(response);
+})
 
