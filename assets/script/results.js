@@ -70,3 +70,34 @@ $.ajax({
     showResults(response);
 })
 
+
+// https://official-joke-api.appspot.com/random_joke
+// ----build URL function----
+
+$(document).ready(function(){
+    let queryURL = "https://official-joke-api.appspot.com/random_joke";
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response.setup);
+        console.log(response.punchline);
+        $("#setup").text(response.setup)
+        $("#punchline").text(response.punchline)
+        localStorage.setItem("punchline", response.punchline)
+        localStorage.setItem("setup", response.setup)
+    });
+    
+    // event listener and handling for a user that doesn't want to see joke
+    $("#nojoke").on("click", function () {
+        console.log("no")
+    });
+    
+    
+    var test = document.querySelector("#test");
+    var showjokesetup = document.querySelector("#showjokesetup");
+    console.log(showjokesetup);
+    showjokesetup.addEventListener("click", function () {
+    test.classList.toggle("is-active");
+    })
+    });

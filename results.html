@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Results</title>
     <!-- reset css -->
     <link rel="stylesheet" href="assets/style/reset.css">
     <!-- bulma cdn -->
@@ -43,6 +43,32 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Our JS -->
     <script src="assets/script/results.js"></script>
+
+
+    <!-- // all code below is for the modal /// -->
+    <div class="modal is-active" id="test">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Dinner and a Joke? Yes, Please!</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <h1 id="setup"></h1>
+                <br>
+                <h3>**Save a recipe for later and we'll show you the punchline!**</h3>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" id="showjokesetup">
+                    Cool! Let's see those recipes
+                </button>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- // all code ABOVE is for the modal /// -->
+
+
 </body>
 
 </html>
