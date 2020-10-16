@@ -2,33 +2,45 @@
 html{
     background-image: url(images/foodOnSIde.jpg);
     background-size: cover;
+    min-height: 800px;
     background-repeat: no-repeat;
 }
 
-.navbar{
-    background-color: #F78800;
+.tabs{
+    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
-.navbar-item{
-    color: white;
+.level-item a{
+    color: black;
+    /* font-weight: bolder;
+    border-style: solid;
+    border-width: thin; */
+    text-shadow: #F78F6D;
+    /* border-radius: 5px; */
+    padding: 5px;
 }
 
-.navbar-item a{
+/* doesn't work */
+.level-item i {
     color: white;
 }
 
 .button{
-    background-color: #f78800;
-    color: white;
+    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
+    color: black;
 }
+
+/* Elements only in index html */
 
 #ingredientSearch{
     display: inline-block;
 }
 
 th{
-    background-color: #f78800;
-    color: white !important;
+    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
+    color: black !important;
 }
 
 /* Elements that only exist on results html*/

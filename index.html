@@ -8,26 +8,21 @@
     <link rel="stylesheet" href="assets/style/reset.css">
     <!-- bulma cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- project css style sheet -->
     <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-menu">
-            <!-- search new item link  -->
-            <div class="navbar-item">
+    <nav class="tabs is-centered is-size-5-mobile is-size-3-tablet is-size-2-widescreen" role="navigation" aria-label="main navigation">
+        <!-- search new item link  -->
+        <div class="level-item">
                 <a href="index.html">New Search</a>
-            </div>
         </div>
-        <!-- navbar brand in the middle  -->
-        <div class="navbar-item">
-            What do I eat?
-        </div>
+        <i class="fas fa-carrot level-item"></i>
         <!-- link to favorites page on the left -->
-        <div class="navbar-end">
-            <div class="navbar-item">
+        <div class="level-item">
                 <a href="favorites.html">My Favorites </a>
-            </div>
         </div>
     </nav>
     <!-- this div contains the search bar for ingredients -->
@@ -44,33 +39,16 @@
     <!-- div that list ingredients when they are added -->
     <div class="columns is-mobile">
         <div class="column is-offset-3-tablet is-offset-1-mobile is-5 ">
-            <table class="table" id="ingredientsTable">
+            <table class="table has-text-justify" id="ingredientsTable">
                 <tr>
                     <th>Ingredients</th>
                     <th></th>
-                </tr>
-                <tr>
-                    <td>Brocoli</td>
-                    <td><a class="delete"></a></td>
-                </tr>
-                <tr>
-                    <td>Salt</td>
-                    <td><a class="delete"></a></td>
-                </tr>
-                <tr>
-                    <td>Parmesan</td>
-                    <td><a class="delete"></a></td>
                 </tr>
             </table>
             <button class="button is-inverted is-outlined" id="ingredientSearch">
                 Search
             </button>           
         </div>
-        <!-- <div class="column is-1">
-            <button class="button is-inverted is-outlined" id="ingredientSearch">
-                Search
-            </button>
-        </div> -->
     </div>
 
 
