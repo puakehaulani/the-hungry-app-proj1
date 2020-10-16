@@ -65,12 +65,4 @@ th{
     font-size: 2rem;
     color: white;
     border-radius: 10px;  
-
-    
 }
-  #display { background-color:rgba(219, 215, 217, 0.60);
-            font-size: 20px;
-            color: #000000;
-            min-height: auto;
-            min-width: auto;
-}        

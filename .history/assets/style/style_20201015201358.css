@@ -68,9 +68,8 @@ th{
 
     
 }
-  #display { background-color:rgba(219, 215, 217, 0.60);
-            font-size: 20px;
+  #display { background-color: 0,51,25,0.5;
+            font-size: 2rem;
             color: #000000;
-            min-height: auto;
-            min-width: auto;
+
 }        

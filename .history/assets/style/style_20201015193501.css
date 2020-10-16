@@ -1,6 +1,6 @@
 
 html{
-    background-image: url(images/foodOnSIde.jpg);
+    background-image: url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -65,12 +65,4 @@ th{
     font-size: 2rem;
     color: white;
     border-radius: 10px;  
-
-    
 }
-  #display { background-color:rgba(219, 215, 217, 0.60);
-            font-size: 20px;
-            color: #000000;
-            min-height: auto;
-            min-width: auto;
-}        
