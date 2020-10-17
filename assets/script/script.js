@@ -37,7 +37,6 @@ document.getElementById("ingredientsTable").addEventListener("click", function(e
     }
 
     // this removes the ingredients table and search bar after all ingredients have been removed
-    console.log(document.getElementById("ingredientsTable").rows.length);
     if(document.getElementById("ingredientsTable").rows.length == 1){
         $("#afterSearchContainer").addClass("is-hidden")
     }

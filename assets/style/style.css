@@ -57,27 +57,7 @@ th{
     border-radius: 15px;
 }
 
-#favRecipes:hover{
-    border: 5px solid rgb(236,75,70, .8);
-}
-
 #favRecipes h1{
     background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
     border-radius: 10px;
-}
-
-#favJokes{
-    min-height: 300px;
-    color: black;
-    background-color: rgb(256, 256, 256, .9);
-    border-radius: 15px;
-}
-
-#favJokes:hover{
-    border: 5px solid rgb(236,75,70, .8);
-}
-
-#favJokes h1{
-    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
-    border-radius: 10px; 
 }
