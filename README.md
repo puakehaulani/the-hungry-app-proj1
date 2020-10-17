@@ -46,9 +46,9 @@
 </p>
 
 The Hungry App aims to solve one of life's hardest questions -- "what's for dinner?" while simultaneously being concious about food waste.  A user can do a quick scan of what's already in their pantry and use those ingredients to search recipes that match. 
-
+<br>
 Who could also use a good laugh to make for some light-hearted conversation while cooking?! The Hungry App not only brings you inspiration for dinner, but also serves you with a joke. When the user searches, the first thing that shows is the set up, or the first part of the joke. I.e.. _"What's the best thing about elevator jokes?"_  Once they've saved a recipe as a favorite, they'll get the answer  --> _"They work on so many levels."_  The favorites page allows the user to revisit recipes later if they were a hit, or if the recipe looked good but perhaps not right at the time of search. 
-
+<br>
 The Hungry App -- Bringing you dinner and a joke! 
 
 
@@ -61,7 +61,6 @@ The Hungry App -- Bringing you dinner and a joke!
 * Bulma
 
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -71,22 +70,21 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
 ```sh
-git clone git@github.com:marandaz/password-generator.git
+git clone git@github.com:puakehaulani/the-hungry-app-proj1.git 
 ```
 
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-<!--  !!TO DO YET!! How do you use the project?!  -->
+This app can be used for:
+* Anyone looking for inspiration for dinner; let's get you out of that rut!
+* To mitigate food waste. Not sure what to do with that wrinkly pepper? Toss it in the search! 
+* lazy days! Don't want to run out to the store? Let's whip something up with what you have!
 
-<!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/marandaz/password-generator/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/puakehaulani/the-hungry-app-proj1/issues) for a list of proposed features (and known issues).
 
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -98,10 +96,9 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-<!-- LICENSE -->
 ## License
 
-Copyright 2020 Maranda Zwieschowski, Mykel Valdez
+Copyright 2020 Maranda Zwieschowski, Mykel Valdez, Devin Abrams, Alexandria Jack
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -109,7 +106,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-<!-- CONTACT -->
+
 ## Contact
 
 Alexandria Jack - puakehaulani@gmail.com
@@ -121,11 +118,12 @@ Maranda Zwieschowski - mrzwies@gmail.com
 Project Link: [https://puakehaulani.github.io/the-hungry-app-proj1/](https://puakehaulani.github.io/the-hungry-app-proj1/)
 
 
-<!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
 * **Instructors:** Shout out to our Bootcamp instructor, John Young, for helping pave the path to a brighter future.  Many thanks also go out to Abdul, our TA, for helping debug and triage while concurrently reinforcing concepts, and Frantz for helping work through the Bulma modal implementation - race conditions will get ya! ;)  
-
+<br>
+* [Bulma Documentation For Developers]: https://bulma.io/documentation/ 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
