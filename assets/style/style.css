@@ -12,20 +12,6 @@ html{
     padding-top: 5px;
 }
 
-.level-item a{
-    color: black;
-    /* font-weight: bolder;
-    border-style: solid;
-    border-width: thin; */
-    text-shadow: #F78F6D;
-    /* border-radius: 5px; */
-    padding: 5px;
-}
-
-/* doesn't work */
-.level-item i {
-    color: white;
-}
 
 .button{
     background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
@@ -33,6 +19,15 @@ html{
 }
 
 /* Elements only in index html */
+
+#indexInstructions{
+    background-color: rgb(236,75,70, .75);
+}
+
+#indexInstructions p{
+    font-weight: bold;
+    color: white;
+}
 
 #ingredientSearch{
     display: inline-block;
