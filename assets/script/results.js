@@ -59,22 +59,11 @@ function showResults(responseli) {
     }
 }
 
-// -----CALLS-----
-let ingredientAPI = buildIngredientsURL();
-//ajax call working, commented out to preserve quota
-$.ajax({
-    url: ingredientAPI,
-    method: "GET",
-}).then(function (response) {
-    console.log(response);
-    showResults(response);
-})
-
 
 // https://official-joke-api.appspot.com/random_joke
 // ----build URL function----
 
-$(document).ready(function(){
+$(document).ready(function () {
     let queryURL = "https://official-joke-api.appspot.com/random_joke";
     $.ajax({
         url: queryURL,
@@ -87,17 +76,50 @@ $(document).ready(function(){
         localStorage.setItem("punchline", response.punchline)
         localStorage.setItem("setup", response.setup)
     });
-    
+
     // event listener and handling for a user that doesn't want to see joke
     $("#nojoke").on("click", function () {
         console.log("no")
     });
-    
-    
-    var test = document.querySelector("#test");
-    var showjokesetup = document.querySelector("#showjokesetup");
+
+
+    let test = document.querySelector("#test");
+    let showjokesetup = document.querySelector("#showjokesetup");
     console.log(showjokesetup);
     showjokesetup.addEventListener("click", function () {
-    test.classList.toggle("is-active");
+        test.classList.toggle("is-active");
     })
-    });
+});
+
+
+// -----CALLS-----
+let ingredientAPI = buildIngredientsURL();
+//ajax call working, commented out to preserve quota
+$.ajax({
+    url: ingredientAPI,
+    method: "GET",
+}).then(function (response) {
+    console.log(response);
+    showResults(response);
+    // click function for save btn, same format as for modal earlier //
+    let punch = document.querySelector("#punch");
+    let showpunchline = document.querySelector("#saveBtn");
+    console.log("lexilog " + showpunchline);
+    showpunchline.addEventListener("click", function () {
+        punch.classList.toggle("is-active");
+        console.log("lexilog2 " + localStorage.getItem("punchline"));
+        $("#punchline").text(localStorage.getItem("punchline"));
+
+        //these local storages needs work, this will currently just store one
+        // localStorage.setItem("favetitle ", );
+        // localStorage.setItem("favelink ", );
+    })
+    // click function to close modal
+    let closepunchline = document.querySelector("#closepunchline");
+    console.log("lexilogclose " + closepunchline);
+    closepunchline.addEventListener("click", function () {
+        punch.classList.toggle("is-active");
+    })
+})
+
+
