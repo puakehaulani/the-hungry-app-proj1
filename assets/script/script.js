@@ -23,6 +23,9 @@ $("#ingredientAdd").on("click", function(){
         );
         // clears the ingredients search bar
         $("#ingredientInput").val('');
+        // makes the ingredients table and search button appear
+        $("#afterSearchContainer").removeClass("is-hidden")
+
 
     }
 });

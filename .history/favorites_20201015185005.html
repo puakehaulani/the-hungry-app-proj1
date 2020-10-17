@@ -12,26 +12,26 @@
     <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-    <nav class="tabs is-centered is-size-5-mobile is-size-3-tablet is-size-2-widescreen" role="navigation" aria-label="main navigation">
-        <ul>
-            <li>
-                <!-- search new item link  -->
-                <a href="index.html">
-                    <span><i class="fas fa-carrot"></i></span>
-                    <span>New Search</span>
-                </a>
-            </li>
-            <li>
-                <!-- link to favorites page on the left -->
-                <a href="favorites.html">
-                    <span><i class="fab fa-gratipay"></i></span>
-                    <span>My Favorites</span>  
-                </a>
-            </li>
-        </ul>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-menu">
+            <!-- search new item link  -->
+            <div class="navbar-item">
+                <a href="index.html">New Search</a>
+            </div>
+        </div>
+        <!-- navbar brand in the middle  -->
+        <div class="navbar-item">
+            What do I eat?
+        </div>
+        <!-- link to favorites page on the left -->
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a href="favorites.html">My Favorites </a>
+            </div>
+        </div>
     </nav>
     
-    <div class="columns has-text-centered mt-5 is-size-5-mobile is-size-3-tablet">
+    <div class="columns has-text-centered mt-5">
         <div class="column is-offset-1 is-5 is-offset-1-mobile is-10-mobile">
             <div id="favRecipes">
                 <h1>My Recipes</h1>
