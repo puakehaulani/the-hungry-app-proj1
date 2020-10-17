@@ -1,6 +1,4 @@
-# the-hungry-app-proj1
-
-<!-- PROJECT LOGO -->
+# The Hungry App
 <br />
 <p align="center">
   <a href="https://github.com/puakehaulani/the-hungry-app-proj1">
@@ -10,7 +8,7 @@
   <h3 align="center">The Hungry App Project</h3>
 
   <p align="center">
-    An in-browswer app to help solve the age-old question, "what's for dinner?" and lighten the mood a little with a joke. 
+    An in-browser app to help solve the age-old question, "what's for dinner?" and lighten the mood a little with a joke. 
     <br />
     <br />
     <a href="https://github.com/puakehaulani/the-hungry-app-proj1"><strong>Explore the docs »</strong></a>
@@ -23,7 +21,6 @@
 </p>
 
 
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
@@ -38,7 +35,6 @@
 * [Acknowledgements](#acknowledgements)
 
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 <p align="center">
@@ -46,11 +42,15 @@
     <img src="Assets/initial.png" alt="on initial page load"/>
     .
     <img src="Assets/clickedgenerate.png" alt="on first click"/>
-<!-- MARANDA TO UPDATE LINK ABOVE SO IT WORKS -->
 </a>
 </p>
 
-<!--  !!TO DO YET!!  small blurb about project  -->
+The Hungry App aims to solve one of life's hardest questions -- "what's for dinner?" while simultaneously being concious about food waste.  A user can do a quick scan of what's already in their pantry and use those ingredients to search recipes that match. 
+
+Who could also use a good laugh to make for some light-hearted conversation while cooking?! The Hungry App not only brings you inspiration for dinner, but also serves you with a joke. When the user searches, the first thing that shows is the set up, or the first part of the joke. I.e.. _"What's the best thing about elevator jokes?"_  Once they've saved a recipe as a favorite, they'll get the answer  --> _"They work on so many levels."_  The favorites page allows the user to revisit recipes later if they were a hit, or if the recipe looked good but perhaps not right at the time of search. 
+
+The Hungry App -- Bringing you dinner and a joke! 
+
 
 ### Built With
 
