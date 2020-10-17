@@ -1,3 +1,7 @@
+// ---List of API Keys available for spoonacular, must change in 2 locations---
+// ---902b0ba573384b2d954de9933fd4c7ef
+// ---65b67db8cfc84a6983b23e942fda13da
+
 // -----GLOBAL VAR-----
 // string of user input ingredients from local storage
 let ingredientsString = localStorage.getItem("ingredients")
@@ -10,7 +14,7 @@ function buildIngredientsURL() {
     let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
     let ingredientsParams = {
         //route to user input id for ingredients
-        apiKey: "eb7473b82620444ab521e6fa290c08a3",
+        apiKey: "65b67db8cfc84a6983b23e942fda13da",
         //route to user input id for recipe type (query)
         ingredients: ingredientsString,
         // //route to user input id for number of results
@@ -35,8 +39,7 @@ function showResults(responseli) {
         viewBtn.attr("class", "button is-inverted is-outlined");
         viewBtn.attr("target", "_blank")
         saveBtn.text("Save to Favorites");
-        saveBtn.attr("id", "saveBtn");
-        saveBtn.attr("class", "is-inverted is-outlined");
+        saveBtn.attr("class", "button is-inverted is-outlined saveBtn");
 
         li.append(viewBtn);
         li.append(saveBtn);
@@ -44,19 +47,19 @@ function showResults(responseli) {
 
         let recipeId = responseli[i].id;
         console.log(recipeId);
-        let recipeAPI = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=eb7473b82620444ab521e6fa290c08a3&includeNutrition=false";
+        let recipeAPI = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=65b67db8cfc84a6983b23e942fda13da&includeNutrition=false";
         // ajax call to get url for recipe, commented out to preserve quota
-        $.ajax({
-            url: recipeAPI,
+        // $.ajax({
+        url: recipeAPI,
             method: "GET",
         }).then(function (response) {
-            console.log(response);
-            let responseLink = response.sourceUrl;
-            console.log(responseLink);
-            li.attr("data-link", responseLink);
-            viewBtn.attr("href", responseLink);
-        })
-    }
+                console.log(response);
+                let responseLink = response.sourceUrl;
+                console.log(responseLink);
+                li.attr("data-link", responseLink);
+                viewBtn.attr("href", responseLink);
+            })
+}
 }
 
 
@@ -95,31 +98,31 @@ $(document).ready(function () {
 // -----CALLS-----
 let ingredientAPI = buildIngredientsURL();
 //ajax call working, commented out to preserve quota
-$.ajax({
-    url: ingredientAPI,
+// $.ajax({
+url: ingredientAPI,
     method: "GET",
 }).then(function (response) {
-    console.log(response);
-    showResults(response);
-    // click function for save btn, same format as for modal earlier //
-    let punch = document.querySelector("#punch");
-    let showpunchline = document.querySelector("#saveBtn");
-    console.log("lexilog " + showpunchline);
-    showpunchline.addEventListener("click", function () {
-        punch.classList.toggle("is-active");
-        console.log("lexilog2 " + localStorage.getItem("punchline"));
-        $("#punchline").text(localStorage.getItem("punchline"));
+        console.log(response);
+        showResults(response);
+        // click function for save btn, same format as for modal earlier //
+        let punch = document.querySelector("#punch");
+        let showpunchline = document.querySelector(".saveBtn");
+        console.log("lexilog " + showpunchline);
+        showpunchline.addEventListener("click", function () {
+            punch.classList.toggle("is-active");
+            console.log("lexilog2 " + localStorage.getItem("punchline"));
+            $("#punchline").text(localStorage.getItem("punchline"));
 
-        //these local storages needs work, this will currently just store one
-        // localStorage.setItem("favetitle ", );
-        // localStorage.setItem("favelink ", );
+            //these local storages needs work, this will currently just store one
+            // localStorage.setItem("favetitle ", );
+            // localStorage.setItem("favelink ", );
+        })
+        // click function to close modal
+        let closepunchline = document.querySelector("#closepunchline");
+        console.log("lexilogclose " + closepunchline);
+        closepunchline.addEventListener("click", function () {
+            punch.classList.toggle("is-active");
+        })
     })
-    // click function to close modal
-    let closepunchline = document.querySelector("#closepunchline");
-    console.log("lexilogclose " + closepunchline);
-    closepunchline.addEventListener("click", function () {
-        punch.classList.toggle("is-active");
-    })
-})
 
 
