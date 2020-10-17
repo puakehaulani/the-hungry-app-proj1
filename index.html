@@ -15,15 +15,22 @@
 </head>
 <body>
     <nav class="tabs is-centered is-size-5-mobile is-size-3-tablet is-size-2-widescreen" role="navigation" aria-label="main navigation">
-        <!-- search new item link  -->
-        <div class="level-item">
-                <a href="index.html">New Search</a>
-        </div>
-        <i class="fas fa-carrot level-item"></i>
-        <!-- link to favorites page on the left -->
-        <div class="level-item">
-                <a href="favorites.html">My Favorites </a>
-        </div>
+        <ul>
+            <li>
+                <!-- search new item link  -->
+                <a href="index.html">
+                    <span><i class="fas fa-carrot"></i></span>
+                    <span>New Search</span>
+                </a>
+            </li>
+            <li>
+                <!-- link to favorites page on the left -->
+                <a href="favorites.html">
+                    <span><i class="fab fa-gratipay"></i></span>
+                    <span>My Favorites</span>  
+                </a>
+            </li>
+        </ul>
     </nav>
     <!-- this div contains the search bar for ingredients -->
     <div class="columns mt-6 is-mobile">
@@ -37,7 +44,7 @@
         </div>
     </div>
     <!-- div that list ingredients when they are added -->
-    <div class="columns is-mobile">
+    <div class="columns is-mobile is-hidden">
         <div class="column is-offset-3-tablet is-offset-1-mobile is-5 ">
             <table class="table has-text-justify" id="ingredientsTable">
                 <tr>
