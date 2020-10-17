@@ -26,43 +26,41 @@ $(document).ready(function () {
 
 
     // show results function
-    function showResults(responseli) {
-        // -----build recipe url-----
-        let $display = $("#display");
-        $display.empty();
-        for (i = 0; i < 10; i++) {
-            let li = $("<li>");
-            let viewBtn = $("<a>");
-            let saveBtn = $("<button>");
-            li.text(responseli[i].title);
-            viewBtn.text("View Recipe");
-            viewBtn.attr("class", "button is-inverted is-outlined");
-            viewBtn.attr("target", "_blank")
-            saveBtn.text("Save to Favorites");
-            saveBtn.attr("class", "button is-inverted is-outlined saveBtn");
+    // function showResults(responseli) {
+    //     // -----build recipe url-----
+    //     let $display = $("#display");
+    //     $display.empty();
+    //     for (i = 0; i < 10; i++) {
+    //         let li = $("<li>");
+    //         let viewBtn = $("<a>");
+    //         let saveBtn = $("<button>");
+    //         li.text(responseli[i].title);
+    //         viewBtn.text("View Recipe");
+    //         viewBtn.attr("class", "button is-inverted is-outlined");
+    //         viewBtn.attr("target", "_blank")
+    //         saveBtn.text("Save to Favorites");
+    //         saveBtn.attr("class", "button is-inverted is-outlined saveBtn");
 
-            li.append(viewBtn);
-            li.append(saveBtn);
-            $display.append(li);
+    //         li.append(viewBtn);
+    //         li.append(saveBtn);
+    //         $display.append(li);
 
-            let recipeId = responseli[i].id;
-            console.log(recipeId);
-            let recipeAPI = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=65b67db8cfc84a6983b23e942fda13da&includeNutrition=false";
-            // ajax call to get url for recipe, commented out to preserve quota
-            $.ajax({
-                url: recipeAPI,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response);
-                let responseLink = response.sourceUrl;
-                console.log(responseLink);
-                li.attr("data-link", responseLink);
-                viewBtn.attr("href", responseLink);
-            })
-        }
-    }
-
-
+    //         let recipeId = responseli[i].id;
+    //         console.log(recipeId);
+    //         let recipeAPI = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=65b67db8cfc84a6983b23e942fda13da&includeNutrition=false";
+    //         // ajax call to get url for recipe, commented out to preserve quota
+    //         $.ajax({
+    //             url: recipeAPI,
+    //             method: "GET",
+    //         }).then(function (response) {
+    //             console.log(response);
+    //             let responseLink = response.sourceUrl;
+    //             console.log(responseLink);
+    //             li.attr("data-link", responseLink);
+    //             viewBtn.attr("href", responseLink);
+    //         })
+    //     }
+    // } 
     // https://official-joke-api.appspot.com/random_joke
     // ----build URL function----
 
@@ -85,16 +83,6 @@ $(document).ready(function () {
         console.log("no")
     });
 
-
-    let test = document.querySelector("#test");
-    let showjokesetup = document.querySelector("#showjokesetup");
-    console.log(showjokesetup);
-    showjokesetup.addEventListener("click", function () {
-        test.classList.toggle("is-active");
-    })
-
-
-
     // -----CALLS-----
 
     let ingredientAPI = buildIngredientsURL();
@@ -103,7 +91,6 @@ $(document).ready(function () {
         url: ingredientAPI,
         method: "GET",
     }).then(function (response) {
-        console.log(response);
         console.log("hello");
         showResults(response);
 
@@ -114,18 +101,4 @@ $(document).ready(function () {
             punch.classList.toggle("is-active");
         })
     })
-
-    // click function for save btn, same format as for modal earlier //
-    let punch = document.querySelector("#punch");
-    let showpunchline = document.querySelector(".saveBtn");
-    console.log("lexilog " + showpunchline);
-    showpunchline.addEventListener("click", function () {
-        punch.classList.toggle("is-active");
-        console.log("lexilog2 " + localStorage.getItem("punchline"));
-        $("#punchline").text(localStorage.getItem("punchline"));
-
-        //these local storages needs work, this will currently just store one
-        // localStorage.setItem("favetitle ", );
-        // localStorage.setItem("favelink ", );
-    })
-});
+})
