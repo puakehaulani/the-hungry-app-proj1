@@ -22,7 +22,12 @@ html{
 /* Elements only in index html */
 
 #indexInstructions{
-    background-color: rgb(236,75,70, .75);
+    background-color: rgb(236,75,70, .3);
+}
+
+#indexInstructions:hover{
+    background-color: rgb(236,75,70, 1);
+    display: block;
 }
 
 #indexInstructions p{
@@ -39,6 +44,10 @@ th{
     color: black !important;
 }
 
+#reverseTh{
+    background-image: linear-gradient(45deg, #BED7C1, #FE8965) ;
+}
+
 /* Elements only on favorites html*/
 
 #favRecipes{
@@ -46,6 +55,10 @@ th{
     color: black;
     background-color: rgb(256, 256, 256, .9);
     border-radius: 15px;
+}
+
+#favRecipes:hover{
+    border: 5px solid rgb(236,75,70, .8);
 }
 
 #favRecipes h1{
@@ -58,6 +71,10 @@ th{
     color: black;
     background-color: rgb(256, 256, 256, .9);
     border-radius: 15px;
+}
+
+#favJokes:hover{
+    border: 5px solid rgb(236,75,70, .8);
 }
 
 #favJokes h1{
