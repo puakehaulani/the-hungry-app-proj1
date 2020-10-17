@@ -10,6 +10,7 @@ html{
     background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
     padding-bottom: 5px;
     padding-top: 5px;
+    color: black !important;
 }
 
 
@@ -38,38 +39,28 @@ th{
     color: black !important;
 }
 
-/* Elements that only exist on results html*/
+/* Elements only on favorites html*/
 
 #favRecipes{
     min-height: 300px;
     color: black;
-    background-color: white;
-    border-style: solid;
-    border-width: 2px;
+    background-color: rgb(256, 256, 256, .9);
     border-radius: 15px;
-    border-color: #F78800;
 }
 
 #favRecipes h1{
-    background-color: #F78800;
-    font-size: 2rem;
-    color: white;
+    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
     border-radius: 10px;
 }
 
 #favJokes{
     min-height: 300px;
     color: black;
-    background-color: white;
-    border-style: solid;
-    border-width: 2px;
+    background-color: rgb(256, 256, 256, .9);
     border-radius: 15px;
-    border-color: #F78800;
 }
 
 #favJokes h1{
-    background-color: #F78800;
-    font-size: 2rem;
-    color: white;
-    border-radius: 10px;  
+    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
+    border-radius: 10px; 
 }
