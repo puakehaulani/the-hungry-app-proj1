@@ -124,7 +124,7 @@ Project Link: [https://puakehaulani.github.io/the-hungry-app-proj1/](https://pua
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* **Instructors:** Shout out to our Bootcamp instructor, John Young, for helping pave the path to a brighter future. 
+* **Instructors:** Shout out to our Bootcamp instructor, John Young, for helping pave the path to a brighter future.  Many thanks also go out to Abdul, our TA, for helping debug and triage while concurrently reinforcing concepts, and Frantz for helping work through the Bulma modal implementation - race conditions will get ya! ;)  
 
 
 
