@@ -4,25 +4,25 @@
 $(document).ready(function () {
     // -----GLOBAL VAR-----
     // string of user input ingredients from local storage
-    let ingredientsString = localStorage.getItem("ingredients")
-    console.log(ingredientsString);
+    // let ingredientsString = localStorage.getItem("ingredients")
+    // console.log(ingredientsString);
 
     // -----build functions-----
 
     // ---build ingredient endpoint function---
-    function buildIngredientsURL() {
-        let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
-        let ingredientsParams = {
-            //route to user input id for ingredients
-            apiKey: "65b67db8cfc84a6983b23e942fda13da",
-            //route to user input id for recipe type (query)
-            ingredients: ingredientsString,
-            // //route to user input id for number of results
-            // number: "",
-        };
-        console.log(ingredientsAPIURL + $.param(ingredientsParams));
-        return ingredientsAPIURL + $.param(ingredientsParams);
-    }
+    // function buildIngredientsURL() {
+    //     let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
+    //     let ingredientsParams = {
+    //         //route to user input id for ingredients
+    //         apiKey: "65b67db8cfc84a6983b23e942fda13da",
+    //         //route to user input id for recipe type (query)
+    //         ingredients: ingredientsString,
+    //         // //route to user input id for number of results
+    //         // number: "",
+    //     };
+    //     console.log(ingredientsAPIURL + $.param(ingredientsParams));
+    //     return ingredientsAPIURL + $.param(ingredientsParams);
+    // }
 
 
     // show results function
@@ -65,40 +65,40 @@ $(document).ready(function () {
     // ----build URL function----
 
 
-    let queryURL = "https://official-joke-api.appspot.com/random_joke";
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response.setup);
-        console.log(response.punchline);
-        $("#setup").text(response.setup)
-        $("#punchline").text(response.punchline)
-        localStorage.setItem("punchline", response.punchline)
-        localStorage.setItem("setup", response.setup)
-    });
+    // let queryURL = "https://official-joke-api.appspot.com/random_joke";
+    // $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    // }).then(function (response) {
+    //     console.log(response.setup);
+    //     console.log(response.punchline);
+    //     $("#setup").text(response.setup)
+    //     $("#punchline").text(response.punchline)
+    //     localStorage.setItem("punchline", response.punchline)
+    //     localStorage.setItem("setup", response.setup)
+    // });
 
-    // event listener and handling for a user that doesn't want to see joke
-    $("#nojoke").on("click", function () {
-        console.log("no")
-    });
+    // // event listener and handling for a user that doesn't want to see joke
+    // $("#nojoke").on("click", function () {
+    //     console.log("no")
+    // });
 
     // -----CALLS-----
 
-    let ingredientAPI = buildIngredientsURL();
-    //ajax call working, commented out to preserve quota
-    $.ajax({
-        url: ingredientAPI,
-        method: "GET",
-    }).then(function (response) {
-        console.log("hello");
-        showResults(response);
+    // let ingredientAPI = buildIngredientsURL();
+    // //ajax call working, commented out to preserve quota
+    // $.ajax({
+    //     url: ingredientAPI,
+    //     method: "GET",
+    // }).then(function (response) {
+    //     console.log("hello");
+    //     showResults(response);
 
-        // click function to close modal
-        let closepunchline = document.querySelector("#closepunchline");
-        console.log("lexilogclose " + closepunchline);
-        closepunchline.addEventListener("click", function () {
-            punch.classList.toggle("is-active");
-        })
-    })
+    //     // click function to close modal
+    //     let closepunchline = document.querySelector("#closepunchline");
+    //     console.log("lexilogclose " + closepunchline);
+    //     closepunchline.addEventListener("click", function () {
+    //         punch.classList.toggle("is-active");
+    //     })
+    // })
 })
