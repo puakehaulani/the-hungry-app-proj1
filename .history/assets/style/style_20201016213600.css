@@ -34,8 +34,6 @@ th{
 .display { background-color: rgba(252, 177, 15, 0.55) ;
            color: black;
            float: left;
-           max-height: fit-content;
-           max-width: fit-content;
            }
 
 /* Elements that only exist on results html*/
