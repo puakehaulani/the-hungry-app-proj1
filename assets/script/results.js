@@ -1,12 +1,14 @@
 
 $(document).ready(function () {
+    let saveArr = [];
     let retrievedRecipe = JSON.parse(localStorage.getItem("recipe"));
+    console.log(retrievedRecipe);
     // show results function
     function buildResults() {
         // -----build recipe url-----
         let $display = $("#display");
         $display.empty();
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < retrievedRecipe.length; i++) {
             let li = $("<li>");
             let viewBtn = $("<a>");
             let saveBtn = $("<button>");
@@ -45,11 +47,16 @@ $(document).ready(function () {
             punch.classList.toggle("is-active");
 
             $("#punchline").text(setup.second);
+
+            //these local storages needs work, this will currently just store one
+            let saveFave = {
+                savetitle: "TITLEINFO",
+                saveurl: "URL INFO"
+            };
+            console.log(JSON.stringify(saveFave));
+            saveArr.push(saveFave);
+            localStorage.setItem("save", JSON.stringify(saveArr));
         });
-        //these local storages needs work, this will currently just store one
-        // let saveFave = { savetitle: $(this).parent().text() };
-        // console.log(JSON.stringify(saveFave));
-        // localStorage.setItem("save", JSON.stringify(saveFave));
     })
     // click function to close modal
     let closepunchline = document.querySelector("#closepunchline");
