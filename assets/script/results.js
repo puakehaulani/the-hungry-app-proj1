@@ -13,6 +13,7 @@ $(document).ready(function () {
             let viewBtn = $("<a>");
             let saveBtn = $("<button>");
             li.text(retrievedRecipe[i].title);
+            li.attr("data-title", retrievedRecipe[i].title)
             viewBtn.text("View Recipe");
             viewBtn.attr("class", "button is-inverted is-outlined");
             viewBtn.attr("target", "_blank");
@@ -50,8 +51,8 @@ $(document).ready(function () {
 
             //these local storages needs work, this will currently just store one
             let saveFave = {
-                savetitle: "TITLEINFO",
-                saveurl: "URL INFO"
+                savetitle: $(this).parent().attr("data-title"),
+                saveurl: $(this).siblings().attr("href")
             };
             console.log(JSON.stringify(saveFave));
             saveArr.push(saveFave);
