@@ -74,6 +74,6 @@ $("#ingredientSearch").on("click", function () {
                 localStorage.setItem("recipe", JSON.stringify(recipeData));
             })
         }
-        location.href = "results.html";
     })
 });
+// location.href = "results.html";
