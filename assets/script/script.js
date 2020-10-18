@@ -76,4 +76,5 @@ $("#ingredientSearch").on("click", function () {
         }
     })
 });
+// BELOW NEEDS TO GO SOMEWHERE TO LINK TO NEXT PAGE BUT EVERYWHERE IVE TRIED BREAKS THE AJAX CALLS
 // location.href = "results.html";
