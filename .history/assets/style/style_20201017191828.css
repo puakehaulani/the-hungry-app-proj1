@@ -50,7 +50,7 @@ th{
 
 
 #resultsContentContainer {
-    background-color:rgb(255, 255, 255, .7);
+    background-color:pink, .7;
     color:black;
     font-weight: bolder;
     float: left;
@@ -58,8 +58,8 @@ th{
 #display li{
     display: flex;
     justify-content: space-between;
-    background-color:#FE8965 ;
-    opacity: 0.75;
+    background-color:turquoise;
+    opacity: 0.55;
 }
 
 

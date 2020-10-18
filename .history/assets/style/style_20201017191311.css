@@ -47,19 +47,20 @@ th{
 
 
 /* Elements that only exist on results html*/
-
+#display {
+    background-color: #FE8965, 0.55;
+    color: black;
+}
 
 #resultsContentContainer {
-    background-color:rgb(255, 255, 255, .7);
-    color:black;
+    background-color: rgb(255, 255, 255, .7);
+    color: rgb(76,75,75);
     font-weight: bolder;
     float: left;
 }
 #display li{
     display: flex;
     justify-content: space-between;
-    background-color:#FE8965 ;
-    opacity: 0.75;
 }
 
 

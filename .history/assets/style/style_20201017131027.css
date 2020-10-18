@@ -48,18 +48,21 @@ th{
 
 /* Elements that only exist on results html*/
 
+#display{
+    background-image: linear-gradient(45deg, #FE8965, #BED7C1, 0.55) ;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: black !important; }
 
 #resultsContentContainer {
-    background-color:rgb(255, 255, 255, .7);
-    color:black;
+    background-color: rgb(255, 255, 255, .7);
+    color: rgb(76,75,75);
     font-weight: bolder;
     float: left;
 }
 #display li{
     display: flex;
     justify-content: space-between;
-    background-color:#FE8965 ;
-    opacity: 0.75;
 }
 
 

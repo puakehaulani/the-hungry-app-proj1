@@ -58,8 +58,8 @@ th{
 #display li{
     display: flex;
     justify-content: space-between;
-    background-color:#FE8965 ;
-    opacity: 0.75;
+    background-color: #FE8965;
+    opacity: 0.55;
 }
 
 

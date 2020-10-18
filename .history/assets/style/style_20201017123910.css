@@ -17,12 +17,6 @@ html{
 .button{
     background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
     color: black;
-    font-weight: bold;
-}
-
-.saveBtn{
-    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
-    color: black;
 }
 
 /* Elements only in index html */
@@ -45,21 +39,31 @@ th{
     color: black !important;
 }
 
+#display { background-color: rgba(252, 177, 15, 0.55) ;
+           color: black;
+           float: left;
+           }
 
 /* Elements that only exist on results html*/
-
-
-#resultsContentContainer {
-    background-color:rgb(255, 255, 255, .7);
-    color:black;
+#resultsContentContainer{
+    background-color: rgb(255, 255, 255, .7);
+    color: rgb(76,75,75);
     font-weight: bolder;
     float: left;
 }
 #display li{
     display: flex;
     justify-content: space-between;
-    background-color:#FE8965 ;
-    opacity: 0.75;
+}
+#resultsContentContainer{
+    background-color: rgb(255, 255, 255, .7);
+    color: rgb(76,75,75);
+    font-weight: bolder;
+    float: left;
+}
+#display li{
+    display: flex;
+    justify-content: space-between;
 }
 
 
