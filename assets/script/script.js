@@ -47,7 +47,7 @@ function buildIngredientsURL() {
 $("#ingredientSearch").on("click", function () {
     localStorage.setItem("ingredients", ingredientsArr);
     let queryURL = "https://official-joke-api.appspot.com/random_joke";
-    // location.href = "results.html";
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -74,5 +74,6 @@ $("#ingredientSearch").on("click", function () {
                 localStorage.setItem("recipe", JSON.stringify(recipeData));
             })
         }
+        location.href = "results.html";
     })
 });
