@@ -17,6 +17,12 @@ html{
 .button{
     background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
     color: black;
+    font-weight: bold;
+}
+
+.saveBtn{
+    background-image: linear-gradient(45deg, #FE8965, #BED7C1) ;
+    color: black;
 }
 
 /* Elements only in index html */
@@ -46,6 +52,22 @@ th{
 
 #reverseTh{
     background-image: linear-gradient(45deg, #BED7C1, #FE8965) ;
+}
+
+/* Elements that only exist on results html*/
+
+
+#resultsContentContainer {
+    background-color:rgb(255, 255, 255, .7);
+    color:black;
+    font-weight: bolder;
+    float: left;
+}
+#display li{
+    display: flex;
+    justify-content: space-between;
+    background-color:#FE8965 ;
+    opacity: 0.75;
 }
 
 /* Elements only on favorites html*/
