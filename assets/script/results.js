@@ -39,19 +39,21 @@ $(document).ready(function () {
 
     // click function for save btn, same format as for modal earlier //
     let punch = document.querySelector("#punch");
-    let showpunchline = document.querySelector(".saveBtn");
-    showpunchline.addEventListener("click", function () {
-        punch.classList.toggle("is-active");
+    let showpunchline = document.querySelectorAll(".saveBtn");
+    showpunchline.forEach(element => {
+        element.addEventListener("click", function () {
+            punch.classList.toggle("is-active");
 
-        $("#punchline").text(setup.second);
+            $("#punchline").text(setup.second);
+        });
         //these local storages needs work, this will currently just store one
-        let saveFave = { savetitle: $(this).parent().text, savelink: $(this).sibling().attr("href") };
-        console.log(saveFave);
+        // let saveFave = { savetitle: $(this).parent().text() };
+        // console.log(JSON.stringify(saveFave));
         // localStorage.setItem("save", JSON.stringify(saveFave));
     })
     // click function to close modal
-    // let closepunchline = document.querySelectorAll("#closepunchline");
-    // closepunchline.addEventListener("click", function () {
-    //     punch.classList.toggle("is-active");
-    // })
+    let closepunchline = document.querySelector("#closepunchline");
+    closepunchline.addEventListener("click", function () {
+        punch.classList.toggle("is-active");
+    })
 });
