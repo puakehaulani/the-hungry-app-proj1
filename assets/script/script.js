@@ -35,7 +35,6 @@ $("#ingredientAdd").on("click", function () {
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
     console.log(event.target)
     if (event.target.matches("a")) {
-        console.log("in here");
         event.target.parentElement.parentElement.remove();
     }
 

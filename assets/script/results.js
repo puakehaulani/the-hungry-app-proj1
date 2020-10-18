@@ -34,6 +34,7 @@ $(document).ready(function () {
             let li = $("<li>");
             let viewBtn = $("<a>");
             let saveBtn = $("<button>");
+            let btnDiv = $("<div>")
             li.text(responseli[i].title);
             viewBtn.text("View Recipe");
             viewBtn.attr("class", "button is-inverted is-outlined");
@@ -41,8 +42,9 @@ $(document).ready(function () {
             saveBtn.text("Save to Favorites");
             saveBtn.attr("class", "button is-inverted is-outlined saveBtn");
 
-            li.append(viewBtn);
-            li.append(saveBtn);
+            btnDiv.append(viewBtn);
+            btnDiv.append(saveBtn);
+            li.append(btnDiv);
             $display.append(li);
 
             let recipeId = responseli[i].id;
