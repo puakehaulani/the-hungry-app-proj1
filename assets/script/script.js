@@ -35,12 +35,10 @@ $("#ingredientAdd").on("click", function () {
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
     console.log(event.target)
     if (event.target.matches("a")) {
-        console.log("in here");
         event.target.parentElement.parentElement.remove();
     }
 
     // this removes the ingredients table and search bar after all ingredients have been removed
-    console.log(document.getElementById("ingredientsTable").rows.length);
     if(document.getElementById("ingredientsTable").rows.length == 1){
         $("#afterSearchContainer").addClass("is-hidden")
     }
