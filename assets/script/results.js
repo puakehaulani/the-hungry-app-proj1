@@ -48,7 +48,7 @@ $(document).ready(function () {
             $("#punchline").text(setup.second);
 
             let saveFave = {
-                savetitle: $(this).parent().attr("data-title"),
+                savetitle: $(this).parent().parent().attr("data-title"),
                 saveurl: $(this).siblings().attr("href")
             };
             saveArr.push(saveFave);
