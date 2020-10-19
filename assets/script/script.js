@@ -1,5 +1,5 @@
 // 
-// ----- Handles Use Inputs-------
+// ----- Handles User Inputs-------
 // array to contain strings of ingredients provided by user
 let ingredientsArr = [];
 // this adds ingredients to the table
@@ -15,7 +15,7 @@ $("#ingredientAdd").on("click", function () {
                 $("<td>").text(ingredient)
             ).append(
                 $("<td>").append(
-                    $("<a>").addClass("delete")
+                    $("<a>").attr("class", "delete is-hidden")
                 )
             )
         );
@@ -25,8 +25,8 @@ $("#ingredientAdd").on("click", function () {
         $("#afterSearchContainer").removeClass("is-hidden")
     }
 });
-// will delete items from the user made ingredient list
 
+// will delete items from the user made ingredient list
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
     console.log(event.target)
     if (event.target.matches("a")) {
@@ -38,6 +38,17 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
         $("#afterSearchContainer").addClass("is-hidden")
     }
 });
+
+//Magic appearing delete buttons
+document.getElementById("ingredientsTable").addEventListener("mouseover", (event) =>{
+    $("a").removeClass("is-hidden");
+})
+
+document.getElementById("ingredientsTable").addEventListener("mouseleave", (event) =>{
+    $("td a").addClass("is-hidden");
+})
+
+
 // -------------------------------
 function buildIngredientsURL() {
     let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
@@ -79,7 +90,7 @@ $("#ingredientSearch").on("click", function () {
                 localStorage.setItem("recipe", JSON.stringify(recipeData));
             })
         }
-    })
+    }).then(() =>{location.href = "results.html"});
 });
 // BELOW NEEDS TO GO SOMEWHERE TO LINK TO NEXT PAGE BUT EVERYWHERE IVE TRIED BREAKS THE AJAX CALLS
 // location.href = "results.html";
