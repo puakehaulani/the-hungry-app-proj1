@@ -10,16 +10,22 @@ $(document).ready(function () {
             let li = $("<li>");
             let viewBtn = $("<a>");
             let saveBtn = $("<button>");
+
             li.text(retrievedRecipe[i].title);
             li.attr("data-title", retrievedRecipe[i].title)
+            let btnDiv = $("<div>")
+
             viewBtn.text("View Recipe");
             viewBtn.attr("class", "button is-inverted is-outlined");
             viewBtn.attr("target", "_blank");
             viewBtn.attr("href", retrievedRecipe[i].recipeUrl);
             saveBtn.text("Save to Favorites");
             saveBtn.attr("class", "button is-inverted is-outlined saveBtn");
-            li.append(viewBtn);
-            li.append(saveBtn);
+
+            btnDiv.append(viewBtn);
+            btnDiv.append(saveBtn);
+            li.append(btnDiv);
+
             $display.append(li);
         }
     }
