@@ -1,4 +1,3 @@
-
 let ingredientsArr = [];
 
 $("#ingredientAdd").on("click", function () {
@@ -10,7 +9,7 @@ $("#ingredientAdd").on("click", function () {
                 $("<td>").text(ingredient)
             ).append(
                 $("<td>").append(
-                    $("<a>").addClass("delete")
+                    $("<a>").attr("class", "delete is-hidden")
                 )
             )
         );
@@ -19,6 +18,9 @@ $("#ingredientAdd").on("click", function () {
     }
 });
 
+$("#ingredientsSearch").removeClass("is-loading");
+
+// will delete items from the user made ingredient list
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
     if (event.target.matches("a")) {
         event.target.parentElement.parentElement.remove();
@@ -28,6 +30,15 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
         $("#afterSearchContainer").addClass("is-hidden")
     }
 });
+
+
+document.getElementById("ingredientsTable").addEventListener("mouseover", (event) =>{
+    $("a").removeClass("is-hidden");
+})
+
+document.getElementById("ingredientsTable").addEventListener("mouseleave", (event) =>{
+    $("td a").addClass("is-hidden");
+})
 
 function buildIngredientsURL() {
     let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
@@ -40,6 +51,7 @@ function buildIngredientsURL() {
 }
 
 $("#ingredientSearch").on("click", function () {
+    $("#ingredientSearch").addClass("is-loading")
     localStorage.setItem("ingredients", ingredientsArr);
     let queryURL = "https://official-joke-api.appspot.com/random_joke";
     $.ajax({
