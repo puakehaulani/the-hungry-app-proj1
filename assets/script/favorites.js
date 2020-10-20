@@ -1,6 +1,6 @@
 let $favoritesDisplay = $("#favoritesDisplay");
 let retrievedFavorites = JSON.parse(localStorage.getItem("save"));
-// $favoritesDisplay.empty();
+$favoritesDisplay.empty();
 for (i = 0; i < retrievedFavorites.length; i++) {
     let li = $("<li>")
     let title = $("<a>");
