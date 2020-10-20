@@ -2,6 +2,7 @@
 // ----- Handles User Inputs-------
 // array to contain strings of ingredients provided by user
 let ingredientsArr = [];
+let mobileScreen = window.matchMedia("(max-width: 1024px)");
 // this adds ingredients to the table
 $("#ingredientAdd").on("click", function () {
     let ingredient = $("#ingredientInput").val();
@@ -9,14 +10,16 @@ $("#ingredientAdd").on("click", function () {
     if (ingredient != "") {
         // pushes ingredient into the array of ingredients
         ingredientsArr.push(ingredient);
+        let deleteBtn = $("<a>").addClass("delete");
+        if(!(mobileScreen.matches)){
+            deleteBtn.addClass("is-hidden")
+        }
         // creates and appends several elements to make the ingredients list elements
         $("#ingredientsTable").append(
             $("<tr>").append(
                 $("<td>").text(ingredient)
             ).append(
-                $("<td>").append(
-                    $("<a>").attr("class", "delete is-hidden")
-                )
+                $("<td>").append(deleteBtn)
             )
         );
         // clears the ingredients search bar
@@ -30,7 +33,6 @@ $("#ingredientsSearch").removeClass("is-loading");
 
 // will delete items from the user made ingredient list
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
-    console.log(event.target)
     if (event.target.matches("a")) {
         event.target.parentElement.parentElement.remove();
     }
@@ -42,14 +44,27 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
 });
 
 //Magic appearing delete buttons
-document.getElementById("ingredientsTable").addEventListener("mouseover", (event) =>{
-    $("a").removeClass("is-hidden");
-})
+document.getElementById("ingredientsTable").addEventListener("mouseover", () =>{
+    if(!(mobileScreen.matches)){
+        $("td a").removeClass("is-hidden");
+    };
+});
 
-document.getElementById("ingredientsTable").addEventListener("mouseleave", (event) =>{
-    $("td a").addClass("is-hidden");
-})
+document.getElementById("ingredientsTable").addEventListener("mouseleave", () =>{
+    if(!(mobileScreen.matches)){
+        $("td a").addClass("is-hidden");
+    };
+});
 
+function mobileTableButtons(){
+    if(mobileScreen.matches){
+        $("td a").removeClass("is-hidden");
+    }else{
+        $("td a").addClass("is-hidden");
+    };
+};
+
+mobileTableButtons(mobileScreen);
 
 // -------------------------------
 function buildIngredientsURL() {
