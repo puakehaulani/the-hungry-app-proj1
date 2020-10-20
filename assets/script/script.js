@@ -28,7 +28,6 @@ $("#ingredientAdd").on("click", function () {
 // will delete items from the user made ingredient list
 
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
-    console.log(event.target)
     if (event.target.matches("a")) {
         event.target.parentElement.parentElement.remove();
     }
@@ -57,16 +56,13 @@ $("#ingredientSearch").on("click", function () {
         method: "GET",
     }).then(function (response) {
         let joke = { first: response.setup, second: response.punchline };
-        console.log(joke);
         localStorage.setItem("joke", JSON.stringify(joke));
         var recipeData = [];
         let ingredientAPI = buildIngredientsURL();
-        console.log(ingredientAPI);
         $.ajax({
             url: ingredientAPI,
             method: "GET",
         }).then(function (response) {
-            console.log("hello");
             for (i = 0; i < 10; i++) {
                 let recipeId = response[i].id;
                 let recipeAPI =
@@ -77,7 +73,6 @@ $("#ingredientSearch").on("click", function () {
                     url: recipeAPI,
                     method: "GET",
                 }).then(function (response) {
-                    console.log(response);
                     let recipe = {
                         recipeid: recipeId,
                         title: response.title,
