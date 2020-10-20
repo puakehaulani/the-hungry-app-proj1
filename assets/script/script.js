@@ -26,6 +26,8 @@ $("#ingredientAdd").on("click", function () {
     }
 });
 
+$("#ingredientsSearch").removeClass("is-loading");
+
 // will delete items from the user made ingredient list
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
     console.log(event.target)
@@ -61,6 +63,7 @@ function buildIngredientsURL() {
 }
 // ---------- Handles Transfering User Input to Results ---
 $("#ingredientSearch").on("click", function () {
+    $("#ingredientSearch").addClass("is-loading")
     localStorage.setItem("ingredients", ingredientsArr);
     let queryURL = "https://official-joke-api.appspot.com/random_joke";
     $.ajax({

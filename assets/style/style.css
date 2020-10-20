@@ -120,15 +120,31 @@ td{
 
 #favRecipes{
     min-height: 300px;
-    color: black;
-    /* background-color: rgb(256, 256, 256, .9); */
-    background-image: linear-gradient(90deg, rgb(255, 255, 255, .6), #BED7C1);
+    padding: 5px;
+    background-image: linear-gradient(90deg, rgb(119, 119, 136, .7), rgb(190, 215, 193, .9));
     border-radius: 5px;
 }
 
+#favRecipes:hover{
+    background-image: linear-gradient(90deg, rgb(119, 119, 136), #BED7C1);
+}
+
 #favRecipes h1{
-    /* background-image: linear-gradient(45deg, #FE8965, #BED7C1) ; */
+    
     background-image: repeating-linear-gradient(90deg, rgb(255, 255, 255, .6), rgb(255, 255, 255, .9)  );
     border-radius: 4px;
+    color: rgb(87,37,28);
+}
+
+#favoritesDisplay a{
+    /* color: rgb(87,37,28); */
+    margin-left: 10px;
+    padding-top: 20px;
+    /* text-shadow: 0px -1px white !important; */
+    color: white;
+    font-size: 1.25rem;
+}
+
+#favoritesDisplay a:hover{
     color: rgb(87,37,28);
 }
