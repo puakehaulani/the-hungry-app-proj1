@@ -34,7 +34,7 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
     }
 
     // this removes the ingredients table and search bar after all ingredients have been removed
-    if(document.getElementById("ingredientsTable").rows.length == 1){
+    if (document.getElementById("ingredientsTable").rows.length == 1) {
         $("#afterSearchContainer").addClass("is-hidden")
     }
 });
@@ -54,7 +54,7 @@ function buildIngredientsURL() {
     let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
     let ingredientsString = localStorage.getItem("ingredients")
     let ingredientsParams = {
-        apiKey: "902b0ba573384b2d954de9933fd4c7ef",
+        apiKey: "65b67db8cfc84a6983b23e942fda13da",
         ingredients: ingredientsString,
     };
     return ingredientsAPIURL + $.param(ingredientsParams);
@@ -63,34 +63,44 @@ function buildIngredientsURL() {
 $("#ingredientSearch").on("click", function () {
     localStorage.setItem("ingredients", ingredientsArr);
     let queryURL = "https://official-joke-api.appspot.com/random_joke";
-
     $.ajax({
         url: queryURL,
-        method: "GET"
+        method: "GET",
     }).then(function (response) {
         let joke = { first: response.setup, second: response.punchline };
         console.log(joke);
         localStorage.setItem("joke", JSON.stringify(joke));
+        var recipeData = [];
+        let ingredientAPI = buildIngredientsURL();
+        console.log(ingredientAPI);
+        $.ajax({
+            url: ingredientAPI,
+            method: "GET",
+        }).then(function (response) {
+            console.log("hello");
+            for (i = 0; i < 10; i++) {
+                let recipeId = response[i].id;
+                let recipeAPI =
+                    "https://api.spoonacular.com/recipes/" +
+                    recipeId +
+                    "/information?apiKey=d8a8af4a51354138b0a630daef052bf8&includeNutrition=false";
+                $.ajax({
+                    url: recipeAPI,
+                    method: "GET",
+                }).then(function (response) {
+                    console.log(response);
+                    let recipe = {
+                        recipeid: recipeId,
+                        title: response.title,
+                        recipeUrl: response.sourceUrl,
+                    };
+                    recipeData.push(recipe);
+                    localStorage.setItem("recipe", JSON.stringify(recipeData));
+                    if (recipeData.length >= 10) {
+                        location.href = "results.html";
+                    }
+                });
+            }
+        });
     });
-    var recipeData = [];
-    let ingredientAPI = buildIngredientsURL();
-    $.ajax({
-        url: ingredientAPI,
-        method: "GET",
-    }).then(function (response) {
-        for (i = 0; i < 10; i++) {
-            let recipeId = response[i].id;
-            let recipeAPI = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=902b0ba573384b2d954de9933fd4c7ef";
-            $.ajax({
-                url: recipeAPI,
-                method: "GET",
-            }).then(function (response) {
-                let recipe = { recipeid: recipeId, title: response.title, recipeUrl: response.sourceUrl };
-                recipeData.push(recipe);
-                localStorage.setItem("recipe", JSON.stringify(recipeData));
-            })
-        }
-    }).then(() =>{location.href = "results.html"});
 });
-// BELOW NEEDS TO GO SOMEWHERE TO LINK TO NEXT PAGE BUT EVERYWHERE IVE TRIED BREAKS THE AJAX CALLS
-// location.href = "results.html";
