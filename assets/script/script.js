@@ -1,9 +1,13 @@
+
 let ingredientsArr = [];
 
 $("#ingredientAdd").on("click", function () {
     let ingredient = $("#ingredientInput").val();
+
     if (ingredient != "") {
+      
         ingredientsArr.push(ingredient);
+
         $("#ingredientsTable").append(
             $("<tr>").append(
                 $("<td>").text(ingredient)
@@ -13,7 +17,10 @@ $("#ingredientAdd").on("click", function () {
                 )
             )
         );
+
+       
         $("#ingredientInput").val('');
+       
         $("#afterSearchContainer").removeClass("is-hidden")
     }
 });
@@ -25,8 +32,9 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
     if (event.target.matches("a")) {
         event.target.parentElement.parentElement.remove();
     }
+  
+    if(document.getElementById("ingredientsTable").rows.length == 1){
 
-    if (document.getElementById("ingredientsTable").rows.length == 1) {
         $("#afterSearchContainer").addClass("is-hidden")
     }
 });
