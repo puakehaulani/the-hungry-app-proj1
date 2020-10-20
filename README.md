@@ -45,7 +45,7 @@
 </a>
 </p>
 
-The Hungry App aims to solve one of life's hardest questions -- "what's for dinner?" while simultaneously being concious about food waste.  A user can do a quick scan of what's already in their pantry and use those ingredients to search recipes that match. 
+The Hungry App aims to solve one of life's hardest questions -- "what's for dinner?" while simultaneously being conscious about food waste.  A user can do a quick scan of what's already in their pantry and use those ingredients to search recipes that match. 
 <br>
 Who could also use a good laugh to make for some light-hearted conversation while cooking?! The Hungry App not only brings you inspiration for dinner, but also serves you with a joke. When the user searches, the first thing that shows is the set up, or the first part of the joke. I.e.. _"What's the best thing about elevator jokes?"_  Once they've saved a recipe as a favorite, they'll get the answer  --> _"They work on so many levels."_  The favorites page allows the user to revisit recipes later if they were a hit, or if the recipe looked good but perhaps not right at the time of search. 
 <br>
@@ -126,8 +126,6 @@ Project Link: [https://puakehaulani.github.io/the-hungry-app-proj1/](https://pua
 * [Bulma Documentation For Developers]: https://bulma.io/documentation/ 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
