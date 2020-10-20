@@ -4,7 +4,9 @@
 let ingredientsArr = [];
 let mobileScreen = window.matchMedia("(max-width: 1024px)");
 // this adds ingredients to the table
-$("#ingredientAdd").on("click", function () {
+
+function ingredientTableBtnAdder (){
+    console.log("is running")
     let ingredient = $("#ingredientInput").val();
     // checks if the input is not empty
     if (ingredient != "") {
@@ -26,8 +28,15 @@ $("#ingredientAdd").on("click", function () {
         $("#ingredientInput").val('');
         // makes the ingredients table and search button appear
         $("#afterSearchContainer").removeClass("is-hidden")
+    };
+};
+$("#ingredientAdd").on("click", () =>{ingredientTableBtnAdder()});
+$("#ingredientInput").keypress((event)=>{
+    if(event.keyCode == 13){
+        ingredientTableBtnAdder();
     }
 });
+
 
 $("#ingredientsSearch").removeClass("is-loading");
 
