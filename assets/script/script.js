@@ -1,20 +1,24 @@
 
 let ingredientsArr = [];
+let mobileScreen = window.matchMedia("(max-width: 1024px)");
 
-$("#ingredientAdd").on("click", function () {
+function ingredientTableBtnAdder (){
     let ingredient = $("#ingredientInput").val();
 
     if (ingredient != "") {
       
         ingredientsArr.push(ingredient);
 
+        let deleteBtn = $("<a>").addClass("delete");
+        if(!(mobileScreen.matches)){
+            deleteBtn.addClass("is-hidden")
+        }
+]
         $("#ingredientsTable").append(
             $("<tr>").append(
                 $("<td>").text(ingredient)
             ).append(
-                $("<td>").append(
-                    $("<a>").attr("class", "delete is-hidden")
-                )
+                $("<td>").append(deleteBtn)
             )
         );
 
@@ -22,8 +26,15 @@ $("#ingredientAdd").on("click", function () {
         $("#ingredientInput").val('');
        
         $("#afterSearchContainer").removeClass("is-hidden")
+    };
+};
+$("#ingredientAdd").on("click", () =>{ingredientTableBtnAdder()});
+$("#ingredientInput").keypress((event)=>{
+    if(event.keyCode == 13){
+        ingredientTableBtnAdder();
     }
 });
+
 
 $("#ingredientsSearch").removeClass("is-loading");
 
@@ -39,15 +50,29 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
     }
 });
 
+document.getElementById("ingredientsTable").addEventListener("mouseover", () =>{
+    if(!(mobileScreen.matches)){
+        $("td a").removeClass("is-hidden");
+    };
+});
 
-document.getElementById("ingredientsTable").addEventListener("mouseover", (event) =>{
-    $("a").removeClass("is-hidden");
-})
+document.getElementById("ingredientsTable").addEventListener("mouseleave", () =>{
+    if(!(mobileScreen.matches)){
+        $("td a").addClass("is-hidden");
+    };
+});
 
-document.getElementById("ingredientsTable").addEventListener("mouseleave", (event) =>{
-    $("td a").addClass("is-hidden");
-})
+function mobileTableButtons(){
+    if(mobileScreen.matches){
+        $("td a").removeClass("is-hidden");
+    }else{
+        $("td a").addClass("is-hidden");
+    };
+};
 
+mobileTableButtons(mobileScreen);
+
+// -------------------------------
 function buildIngredientsURL() {
     let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
     let ingredientsString = localStorage.getItem("ingredients")
