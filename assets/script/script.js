@@ -27,10 +27,8 @@ $("#ingredientInput").keypress((event)=>{
     }
 });
 
-
 $("#ingredientsSearch").removeClass("is-loading");
 
-// will delete items from the user made ingredient list
 document.getElementById("ingredientsTable").addEventListener("click", function (event) {
     if (event.target.matches("a")) {
         event.target.parentElement.parentElement.remove();
