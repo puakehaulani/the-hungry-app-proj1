@@ -39,17 +39,17 @@
 
 <p align="center">
 <a href="https://puakehaulani.github.io/the-hungry-app-proj1/">
-    <img src="assets/images/hpmobile.png" alt="homepage on mobile"/>
+    <img src="assets/images/hpmobile.png" alt="homepage on mobile" width="max" height="600px"/>
     .
-    <img src="assets/images/hpdesktop.png" alt="homepage on desktop"/>
+    <img src="assets/images/hpdesktop.png" alt="homepage on desktop" width="max" height="600px"/>
     .
-    <img src="assets/images/setupdesktop.png" alt="results page showing joke setup desktop"/>
+    <img src="assets/images/setupdesktop.png" alt="results page showing joke setup desktop" width="max" height="600px"/>
     .
-    <img src="assets/images/setupmobile.png" alt="results page showing joke setup on desktop"/>
+    <img src="assets/images/setupmobile.png" alt="results page showing joke setup on desktop" width="max" height="600px"/>
     .
-    <img src="assets/images/favoritemobile.png" alt="favorite page on desktop"/>
+    <img src="assets/images/favoritemobile.png" alt="favorite page on desktop" width="max" height="600px"/>
     .
-    <img src="assets/images/favoritemobile.png" alt="favorite page on desktop"/>
+    <img src="assets/images/favoritemobile.png" alt="favorite page on desktop" width="max" height="600px"/>
 
 </a>
 </p>
