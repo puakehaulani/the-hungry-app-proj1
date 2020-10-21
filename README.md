@@ -49,7 +49,7 @@
     .
     <img src="assets/images/favoritemobile.png" alt="favorite page on desktop" width="max" height="600px"/>
     .
-    <img src="assets/images/favoritemobile.png" alt="favorite page on desktop" width="max" height="600px"/>
+    <img src="assets/images/favoritedesktop.png" alt="favorite page on desktop" width="max" height="600px"/>
 
 </a>
 </p>
