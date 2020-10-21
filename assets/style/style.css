@@ -83,6 +83,10 @@ td{
     border-radius: 10px;
 }
 
+.modal-card-title{
+    inline-size: 1rem;
+}
+
 .modal-card-head{
     background-color: rgb(119, 119, 136);
 }
