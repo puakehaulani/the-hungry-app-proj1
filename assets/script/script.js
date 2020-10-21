@@ -2,18 +2,18 @@
 let ingredientsArr = [];
 let mobileScreen = window.matchMedia("(max-width: 1024px)");
 
-function ingredientTableBtnAdder (){
+function ingredientTableBtnAdder() {
     let ingredient = $("#ingredientInput").val();
 
     if (ingredient != "") {
-      
+
         ingredientsArr.push(ingredient);
 
         let deleteBtn = $("<a>").addClass("delete");
-        if(!(mobileScreen.matches)){
+        if (!(mobileScreen.matches)) {
             deleteBtn.addClass("is-hidden")
         }
-]
+
         $("#ingredientsTable").append(
             $("<tr>").append(
                 $("<td>").text(ingredient)
@@ -22,15 +22,16 @@ function ingredientTableBtnAdder (){
             )
         );
 
-       
+
         $("#ingredientInput").val('');
-       
+
         $("#afterSearchContainer").removeClass("is-hidden")
     };
 };
-$("#ingredientAdd").on("click", () =>{ingredientTableBtnAdder()});
-$("#ingredientInput").keypress((event)=>{
-    if(event.keyCode == 13){
+
+$("#ingredientAdd").on("click", () => { ingredientTableBtnAdder() });
+$("#ingredientInput").keypress((event) => {
+    if (event.keyCode == 13) {
         ingredientTableBtnAdder();
     }
 });
@@ -41,29 +42,29 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
     if (event.target.matches("a")) {
         event.target.parentElement.parentElement.remove();
     }
-  
-    if(document.getElementById("ingredientsTable").rows.length == 1){
+
+    if (document.getElementById("ingredientsTable").rows.length == 1) {
 
         $("#afterSearchContainer").addClass("is-hidden")
     }
 });
 
-document.getElementById("ingredientsTable").addEventListener("mouseover", () =>{
-    if(!(mobileScreen.matches)){
+document.getElementById("ingredientsTable").addEventListener("mouseover", () => {
+    if (!(mobileScreen.matches)) {
         $("td a").removeClass("is-hidden");
     };
 });
 
-document.getElementById("ingredientsTable").addEventListener("mouseleave", () =>{
-    if(!(mobileScreen.matches)){
+document.getElementById("ingredientsTable").addEventListener("mouseleave", () => {
+    if (!(mobileScreen.matches)) {
         $("td a").addClass("is-hidden");
     };
 });
 
-function mobileTableButtons(){
-    if(mobileScreen.matches){
+function mobileTableButtons() {
+    if (mobileScreen.matches) {
         $("td a").removeClass("is-hidden");
-    }else{
+    } else {
         $("td a").addClass("is-hidden");
     };
 };
@@ -75,7 +76,7 @@ function buildIngredientsURL() {
     let ingredientsAPIURL = "https://api.spoonacular.com/recipes/findByIngredients?"
     let ingredientsString = localStorage.getItem("ingredients")
     let ingredientsParams = {
-        apiKey: "65b67db8cfc84a6983b23e942fda13da",
+        apiKey: "902b0ba573384b2d954de9933fd4c7ef",
         ingredients: ingredientsString,
     };
     return ingredientsAPIURL + $.param(ingredientsParams);
@@ -102,7 +103,7 @@ $("#ingredientSearch").on("click", function () {
                 let recipeAPI =
                     "https://api.spoonacular.com/recipes/" +
                     recipeId +
-                    "/information?apiKey=d8a8af4a51354138b0a630daef052bf8&includeNutrition=false";
+                    "/information?apiKey=902b0ba573384b2d954de9933fd4c7ef&includeNutrition=false";
                 $.ajax({
                     url: recipeAPI,
                     method: "GET",
