@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/puakehaulani/the-hungry-app-proj1">
-    <img src="./Assets/images/homemobile.png" alt="Logo" width="max" height="600px">
+    <img src="./assets/images/hpmobile.png" alt="Logo" width="max" height="600px">
   </a>
 
   <h3 align="center">The Hungry App Project</h3>
@@ -39,9 +39,18 @@
 
 <p align="center">
 <a href="https://puakehaulani.github.io/the-hungry-app-proj1/">
-    <img src="Assets/images/homemobile.png" alt="homepage on mobile"/>
+    <img src="assets/images/hpmobile.png" alt="homepage on mobile"/>
     .
-    <img src="Assets/images/homedesktop.png" alt="homepage on desktop"/>
+    <img src="assets/images/hpdesktop.png" alt="homepage on desktop"/>
+    .
+    <img src="assets/images/setupdesktop.png" alt="results page showing joke setup desktop"/>
+    .
+    <img src="assets/images/setupmobile.png" alt="results page showing joke setup on desktop"/>
+    .
+    <img src="assets/images/favoritemobile.png" alt="favorite page on desktop"/>
+    .
+    <img src="assets/images/favoritemobile.png" alt="favorite page on desktop"/>
+
 </a>
 </p>
 

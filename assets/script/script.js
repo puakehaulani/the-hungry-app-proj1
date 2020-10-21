@@ -1,14 +1,19 @@
+
 let ingredientsArr = [];
 let mobileScreen = window.matchMedia("(max-width: 1024px)");
 
 function ingredientTableBtnAdder (){
     let ingredient = $("#ingredientInput").val();
+
     if (ingredient != "") {
+      
         ingredientsArr.push(ingredient);
+
         let deleteBtn = $("<a>").addClass("delete");
         if(!(mobileScreen.matches)){
             deleteBtn.addClass("is-hidden")
         }
+]
         $("#ingredientsTable").append(
             $("<tr>").append(
                 $("<td>").text(ingredient)
@@ -16,7 +21,10 @@ function ingredientTableBtnAdder (){
                 $("<td>").append(deleteBtn)
             )
         );
+
+       
         $("#ingredientInput").val('');
+       
         $("#afterSearchContainer").removeClass("is-hidden")
     };
 };
@@ -35,8 +43,9 @@ document.getElementById("ingredientsTable").addEventListener("click", function (
     if (event.target.matches("a")) {
         event.target.parentElement.parentElement.remove();
     }
+  
+    if(document.getElementById("ingredientsTable").rows.length == 1){
 
-    if (document.getElementById("ingredientsTable").rows.length == 1) {
         $("#afterSearchContainer").addClass("is-hidden")
     }
 });
